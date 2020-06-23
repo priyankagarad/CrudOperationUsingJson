@@ -3,7 +3,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
  public class Employee {
@@ -12,12 +11,10 @@ import java.util.Date;
      private Integer id;
      private String name;
      private String city;
-     private Date data;
 
     public Employee(Employee employee){
         name =employee.name;
         city =employee.city;
-        data =employee.data;
     }
 
     public Integer getId() {
@@ -44,11 +41,4 @@ import java.util.Date;
         this.city = city;
     }
 
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
-    }
 }
