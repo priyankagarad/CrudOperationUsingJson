@@ -28,4 +28,10 @@ public class EmployeeRepository {
         }
         return employeeList;
     }
+
+    public List<Employee> get() {
+        List<Employee> employeeList = loadEmployeeData();
+        return employeeList;
+    }
+
 }

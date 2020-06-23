@@ -12,9 +12,9 @@ import javax.persistence.Id;
      private String name;
      private String city;
 
-    public Employee(Employee employee){
-        name =employee.name;
-        city =employee.city;
+    public Employee(String name, String city){
+        this.name=name;
+        this.city=city;
     }
 
     public Integer getId() {
