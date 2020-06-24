@@ -21,4 +21,10 @@ public class EmployeeService {
     public Employee addEmployee(Employee employee) throws IOException {
         return employeeRepository.addEmployee(employee);
     }
+
+    public Employee getEmployeeById(Integer id) {
+        return employeeRepository.getEmployeeById(id);
+    }
+
+
 }

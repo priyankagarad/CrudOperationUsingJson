@@ -41,5 +41,16 @@ public class EmployeeRepository {
         return employee;
     }
 
+    @Override
+    public Employee getEmployeeById(Integer id) {
+        if(id!=null) {
+            Employee e = employeeList.stream().filter(employee -> employee.getId() == id).findAny().get();
+            return e;
+        }
+
+        return null;
+    }
+
+
 
 }

@@ -23,5 +23,13 @@ public class EmployeeController {
         return employeeService.addEmployee(employee);
     }
 
+    @PutMapping("/{id}")
+    public Employee updateEmployee(@RequestBody Employee employee, @PathVariable Integer id) throws IOException {
+        Employee employee2=employeeService.getEmployeeById(id);
+        employee2.setName(employee.getName());
+        employee2.setCity(employee.getCity());
+        return employee2;
+    }
+
 
 }
