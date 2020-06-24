@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 public interface EmployeeInterface {
     List<Employee> getEmployeeDetail();
-    Employee addEmployee(Employee user) throws IOException;
+    Employee addEmployee(Employee employee) throws IOException;
     Employee getEmployeeById(Integer id);
     void deleteByEmployeeId(Integer id);
 

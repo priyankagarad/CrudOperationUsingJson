@@ -13,8 +13,8 @@ public class EmployeeService {
     public EmployeeRepository employeeRepository;
 
     public List<Employee> getEmployeeDetail() {
-        List<Employee> userList = employeeRepository.getEmployeeDetail();
-        return userList;
+        List<Employee> employeeList = employeeRepository.getEmployeeDetail();
+        return employeeList;
     }
 
     public Employee addEmployee(Employee employee) throws IOException {

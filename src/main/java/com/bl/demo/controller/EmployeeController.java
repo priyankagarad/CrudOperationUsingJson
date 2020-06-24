@@ -34,7 +34,6 @@ public class EmployeeController {
         Employee employee2=employeeService.getEmployeeById(id);
         employee2.setName(employee.getName());
         employee2.setCity(employee.getCity());
-       // return employeeService.addEmployee(employee2);
        return employee2;
     }
 
