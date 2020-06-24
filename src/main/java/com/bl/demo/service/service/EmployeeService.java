@@ -3,7 +3,6 @@ import com.bl.demo.model.Employee;
 import com.bl.demo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -26,5 +25,8 @@ public class EmployeeService {
         return employeeRepository.getEmployeeById(id);
     }
 
+    public void deleteByEmployeeId(Integer id) {
+        employeeRepository.deleteByEmployeeId(id);
+    }
 
 }

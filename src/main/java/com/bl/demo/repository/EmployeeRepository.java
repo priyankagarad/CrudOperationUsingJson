@@ -51,6 +51,24 @@ public class EmployeeRepository {
         return null;
     }
 
+    @Override
+    public void deleteByEmployeeId(Integer id) {
+        Employee remove=null;
+        Employee e = employeeList.stream().filter(employee -> employee.getId() == id).findAny().get();
+        if(e.getId()==id){
+            remove=e;
+        }
+
+        if (remove!=null){
+            employeeList.remove(remove);
+            try {
+                objectMapper.writeValue(new File("./src/main/resources/EmployeeDetail.json"), employeeList);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+
 
 
 }
