@@ -40,5 +40,4 @@ import javax.persistence.Id;
     public void setCity(String city) {
         this.city = city;
     }
-
 }
