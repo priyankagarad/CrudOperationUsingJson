@@ -1,4 +1,4 @@
-package com.bl.demo.service.service;
+package com.bl.demo.service;
 import com.bl.demo.model.Employee;
 import com.bl.demo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;

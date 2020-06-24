@@ -4,19 +4,24 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Repository;
 import java.io.*;
 import java.util.List;
 
-public class EmployeeRepository {
-    public List<Employee> employeeList;
+@Repository
+public class EmployeeRepository implements  {
+    private List<Employee> employeeList;
 
-    public List<Employee> loadEmployeeData() {
-        ObjectMapper mapper = new ObjectMapper();
+    private InputStream inputStream;
+    private ObjectMapper objectMapper;
+
+    public EmployeeRepository(){
+        objectMapper=new ObjectMapper();
         try {
-            InputStream  inputStream = new FileInputStream(new File("./src/main/resources/Empoyee.json"));
-            com.fasterxml.jackson.core.type.TypeReference<List<Employee>> typeReference = new TypeReference<List<Employee>>() {
+            inputStream=new FileInputStream(new File("./src/main/resources/EmployeeDetail.json"));
+            TypeReference<List<Employee>>typeReference=new TypeReference<List<Employee>>() {
             };
-            employeeList = mapper.readValue(inputStream, typeReference);
+            employeeList =objectMapper.readValue(inputStream,typeReference);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (JsonParseException e) {
@@ -26,11 +31,10 @@ public class EmployeeRepository {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return employeeList;
     }
 
-    public List<Employee> get() {
-        List<Employee> employeeList = loadEmployeeData();
+    @Override
+    public List<Employee> getEmployeeDetail() {
         return employeeList;
     }
 
@@ -68,7 +72,4 @@ public class EmployeeRepository {
             }
         }
     }
-
-
-
 }
