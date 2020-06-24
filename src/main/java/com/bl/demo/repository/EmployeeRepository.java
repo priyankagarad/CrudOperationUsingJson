@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.List;
 
 @Repository
-public class EmployeeRepository implements  {
+public class EmployeeRepository implements EmployeeInterface {
     private List<Employee> employeeList;
 
     private InputStream inputStream;
