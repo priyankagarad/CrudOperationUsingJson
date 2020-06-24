@@ -34,5 +34,12 @@ public class EmployeeRepository {
         return employeeList;
     }
 
+    @Override
+    public Employee addEmployee(Employee employee) throws IOException {
+        employeeList.add(employee);
+        objectMapper.writeValue(new File("./src/main/resources/EmployeeDetail.json"), employeeList);
+        return employee;
+    }
+
 
 }

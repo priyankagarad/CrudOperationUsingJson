@@ -3,6 +3,8 @@ import com.bl.demo.model.Employee;
 import com.bl.demo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -16,5 +18,7 @@ public class EmployeeService {
         return userList;
     }
 
-
+    public Employee addEmployee(Employee employee) throws IOException {
+        return employeeRepository.addEmployee(employee);
+    }
 }
