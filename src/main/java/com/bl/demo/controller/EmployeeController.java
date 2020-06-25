@@ -30,11 +30,8 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    public Employee updateEmployee(@RequestBody Employee employee, @PathVariable Integer id) throws IOException {
-        Employee employee2=employeeService.getEmployeeById(id);
-        employee2.setName(employee.getName());
-        employee2.setCity(employee.getCity());
-       return employee2;
+    public void updateEmployee(@PathVariable Integer id,@RequestBody Employee employee ) throws IOException {
+        employeeService.updateEmployee(id,employee);
     }
 
     @GetMapping("/{id}")

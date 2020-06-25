@@ -1,13 +1,15 @@
 package com.bl.demo.model;
-
- public class Employee {
+import java.util.Date;
+public class Employee {
      private Integer id;
      private String name;
      private String city;
+     private Date date;
 
-    public Employee(String name, String city){
+    public Employee(String name, String city, Date data){
         this.name=name;
         this.city=city;
+        this.date = data;
     }
 
     public Integer getId() {
@@ -32,5 +34,22 @@ package com.bl.demo.model;
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }
